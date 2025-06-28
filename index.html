@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+  <head>
+    VR Fingerprint Research
+  </head>
+  <body>
+    <h3>Purpose of This Research</h3>
+    <p>
+      We want to extract device-specific features from motion sensors in VR
+      headsets. Those features can be used to do user identification,
+      fingerprinting of devices, and behavior profiling.
+    </p>
+    <p>
+      You are expected to have one of Meta Quest 2, Meta Quest 3, or Meta Quest
+      3s. Any other types of VR headsets are not supported.
+    </p>
+    <p>
+      Each device is allowed to participate only once. Multiple attempts will
+      result in rejection.
+    </p>
+
+    <h3>Steps to Collect Your IMU Data</h3>
+    <ol>
+      <li>
+        Please make sure your device is connected to Wi-Fi during the
+        experiment.
+      </li>
+      <li>Please make sure your device's volume is set to the maximum.</li>
+      <li>
+        Please make sure your Display-off time is set to at least 15 minutes.
+        (Library -> Settings -> General -> Power -> Display off)
+      </li>
+      <li>
+        Enable the Developer Mode of your headset using the Meta Horizon app on
+        your smartphone (Meta Horizon app -> Device (Upper left corner) ->
+        Headset Settings -> Developer Mode)
+      </li>
+      <li>
+        Download the APK:
+        <a
+          href="https://drive.google.com/file/d/1vSzEkVdpBxtEpqfcOowRSe2TA4hUHxCd/view?usp=sharing"
+          >VRSensorLog.apk</a
+        >
+      </li>
+      <li>
+        In the Meta Horizon Store, search and install the Mobile VR Station.
+      </li>
+      <li>
+        Open Mobile VR Station -> Allow Permissions -> Click continue at the
+        bottom -> Configuration Wizard -> Show All Options -> Configure Manage
+        All Files -> Open Files All -> Locate VRSensorLog.apk -> Settings ->
+        Allow from this source -> Install
+      </li>
+      <li>
+        Open “AndroidSensorLog” from the Mobile VR Station on your headset.
+      </li>
+    </ol>
+
+    <p>There are 3 assignments for you to finish:</p>
+    <strong>Assignment 1:</strong>
+    <ol>
+      <li>Put on your headset.</li>
+      <li>
+        Press <strong>Start</strong>, take off your headset, and put it on the
+        table.
+      </li>
+      <li>
+        After 5 minutes, put on your headset, select
+        <strong>Stop and Upload</strong>, and wait for
+        <code>Upload Successful.</code> to show at the bottom of the screen.
+      </li>
+    </ol>
+    <p>
+      <em
+        >Failure to upload a valid IMU data file with ≥210,000 samples will
+        result in rejection.</em
+      >
+    </p>
+
+    <strong>Assignment 2:</strong>
+    <ol>
+      <li>Put on your headset.</li>
+      <li>Press <strong>Next</strong> and SIT STILL.</li>
+      <li>
+        After 5 minutes, select <strong>Stop and Upload</strong> and wait for
+        <code>Upload Successful.</code> to show at the bottom of the screen.
+      </li>
+    </ol>
+    <p>
+      <em
+        >Failure to upload a valid IMU data file with ≥210,000 samples will
+        result in rejection.</em
+      >
+    </p>
+
+    <strong>Assignment 3:</strong>
+    <ol>
+      <li>Put on your headset.</li>
+      <li>Press <strong>Next</strong> and STAND STILL.</li>
+      <li>
+        After 5 minutes, select <strong>Stop and Upload</strong> and wait for
+        <code>Upload Successful.</code> to show at the bottom of the screen.
+      </li>
+    </ol>
+    <p>
+      <em
+        >Failure to upload a valid IMU data file with ≥210,000 samples will
+        result in rejection.</em
+      >
+    </p>
+
+    <p>
+      Before submitting the assignments, please enter your email in the VR
+      application. Failure to enter a valid email address will result in
+      rejection.
+    </p>
+    <!---
+    <strong>Please enter your email address and your device type here below.</strong>
+    <div>
+        <p><strong>Email address:</strong></p>
+        <crowd-input name="email" default-value=${task.input.email} placeholder="e.g. example@email.com" type="email" required></crowd-input>
+    </div>
+
+    <div>
+        <p><strong>Device Type:</strong></p>
+        <crowd-input name="deviceType" default-value=${task.input.deviceType} placeholder="Meta Quest 2, Meta Quest 3, or Meta Quest 3s" required></crowd-input>
+    </div>
+    --->
+    <p>
+      <strong
+        >Thanks for your participation. Please click the submit button
+        below.</strong
+      >
+    </p>
+    <p>
+      If you have any questions or suggestions, please contact
+      <a href="mailto:yi.qu@temple.edu">yi.qu@temple.edu</a>. Thanks.
+    </p>
+  </body>
+</html>
