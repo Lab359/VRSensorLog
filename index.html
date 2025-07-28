@@ -1,15 +1,38 @@
 <!doctype html>
 <html>
   <head>
-    VR Fingerprint Research
+    <h3>VR Fingerprint Research</h3>
   </head>
   <body>
-    <h3>Purpose of This Research</h3>
-    <p>
-      We want to extract device-specific features from motion sensors in VR
-      headsets. Those features can be used to do user identification,
-      fingerprinting of devices, and behavior profiling.
-    </p>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const prolific_id = params.get("PROLIFIC_PID");
+      const study_id = params.get("STUDY_ID");
+      const session_id = params.get("SESSION_ID");
+
+      function hashString(str) {
+        let has = 5381;
+        for (let i = 0; i < str.length; i++) {
+          hash = (hash << 5) + hash + str.charCodeAt(i);
+          hash = hash & 0xffffffff;
+        }
+        return Math.abs(hash);
+      }
+
+      function generateCode(prolific_id) {
+        const hash = hashString(prolific_id);
+        const code = (hash % 900000) + 100000;
+        return code;
+      }
+
+      const output = document.getElementById("result");
+      if (prolific_id) {
+        const code = generateCode(prolific_id);
+        output.innerText = `Prolific PID = ${prolific_id}. Your verification code = ${code}.`;
+      } else {
+        output.innerText = `No Prolific PID found in URL.`;
+      }
+    </script>
     <p>
       You are expected to have one of Meta Quest 2, Meta Quest 3, or Meta Quest
       3s. Any other types of VR headsets are not supported.
@@ -19,20 +42,13 @@
       result in rejection.
     </p>
 
-    <h3>Steps to Collect Your IMU Data</h3>
+    <h3>Preparation</h3>
     <ol>
-      <li>
-        Please make sure your device is connected to Wi-Fi during the
-        experiment.
-      </li>
+      <li>Connect your VR headset to Wi-Fi.</li>
       <!--<li>Please make sure your device's volume is set to the maximum.</li>-->
       <li>
-        Please make sure your device is on a separate table without any laptops,
-        speakers, or anything else that could cause vibrations.
-      </li>
-      <li>
-        Please make sure your Display-off time is set to at least 15 minutes.
-        (Library -> Settings -> General -> Power -> Display off)
+        Set the Display-off time to 15 minutes. (Library -> Settings -> General
+        -> Power -> Display off)
       </li>
       <li>
         Enable the Developer Mode of your headset using the Meta Horizon app on
@@ -61,62 +77,75 @@
     </ol>
 
     <p>There are 3 assignments for you to finish:</p>
-    <strong>Assignment 1:</strong>
+    <strong>Assignment 1: Stable on the Table</strong>
     <ol>
+      <li>
+        Please make sure your device is on a separate table without any laptops,
+        speakers, or anything else that could cause vibrations.
+      </li>
+
       <li>Put on your headset.</li>
       <li>
         Press <strong>Start</strong>, take off your headset, and put it on the
         table.
       </li>
       <li>
-        After 5 minutes, put on your headset, select
+        Wait for at least 5 minutes, put on your headset, select
         <strong>Stop and Upload</strong>, and wait for
         <code>Upload Successful.</code> to show at the bottom of the screen.
       </li>
     </ol>
     <p>
       <em
-        >Failure to upload a valid IMU data file with ≥210,000 samples will
-        result in rejection.</em
+        >Failure to upload a valid data file collected for at least 5 minutes
+        will result in rejection.</em
       >
     </p>
 
-    <strong>Assignment 2:</strong>
+    <strong>Assignment 2: Sitting Still</strong>
     <ol>
       <li>Put on your headset.</li>
-      <li>Press <strong>Next</strong> and SIT STILL.</li>
       <li>
-        After 5 minutes, select <strong>Stop and Upload</strong> and wait for
-        <code>Upload Successful.</code> to show at the bottom of the screen.
+        Press <strong>Next</strong> and SIT STILL wherever you feel confortable.
+        Try to stay still as much as you can.
+      </li>
+      <li>
+        Wait for at least 5 minutes, select <strong>Stop and Upload</strong> and
+        wait for <code>Upload Successful.</code> to show at the bottom of the
+        screen.
       </li>
     </ol>
     <p>
       <em
-        >Failure to upload a valid IMU data file with ≥210,000 samples will
-        result in rejection.</em
+        >Failure to upload a valid data file collected for at least 5 minutes
+        will result in rejection.</em
       >
     </p>
 
-    <strong>Assignment 3:</strong>
+    <strong>Assignment 3: Standing Still</strong>
     <ol>
       <li>Put on your headset.</li>
-      <li>Press <strong>Next</strong> and STAND STILL.</li>
       <li>
-        After 5 minutes, select <strong>Stop and Upload</strong> and wait for
-        <code>Upload Successful.</code> to show at the bottom of the screen.
+        Press <strong>Next</strong> and STAND STILL. Try to stay still as much
+        as you can.
+      </li>
+      <li>
+        Wait for at least 5 minutes, select <strong>Stop and Upload</strong> and
+        wait for <code>Upload Successful.</code> to show at the bottom of the
+        screen.
       </li>
     </ol>
     <p>
       <em
-        >Failure to upload a valid IMU data file with ≥210,000 samples will
-        result in rejection.</em
+        >Failure to upload a valid data file collected for at least 5 minutes
+        will result in rejection.</em
       >
     </p>
 
     <p>
-      A 6-digit code is generated at the bottom of the screen. Please enter this
-      code in the corresponding section on the website. Failure to enter a valid
-      code will result in rejection.
+      When you finish all the tasks, a 6-digit code is generated at the bottom
+      of the screen. Please enter this code in the corresponding section on the
+      website. Failure to enter a valid code will result in rejection.
     </p>
     <p>
       Before submitting the assignments, please enter your email in the VR
@@ -141,6 +170,11 @@
         below.</strong
       >
     </p>
+    <button
+      onclick="location.href='https://yourusername.github.io/yourrepo/target.html'"
+    >
+      Go to Target Page
+    </button>
     <p>
       If you have any questions or suggestions, please contact
       <a href="mailto:yi.qu@temple.edu">yi.qu@temple.edu</a>. Thanks.
