@@ -25,14 +25,28 @@
         return code;
       }
 
+      function redirect() {
+        const input = document.getElementById("finishCode").value.trim();
+        if (input !== "C191Z2IJ") {
+          alert("Please enter a Valid Code.");
+          return;
+        } else {
+          const redirectUrl =
+            "https://app.prolific.com/submissions/complete?cc=C191Z2IJ";
+          window.location.href = redirectUrl;
+        }
+      }
+
       const output = document.getElementById("result");
       if (prolific_id) {
         const code = generateCode(prolific_id);
-        output.innerText = `Prolific PID = ${prolific_id}. Your verification code = ${code}.`;
+        output.innerText = `your Prolific PID = ${prolific_id}.`;
       } else {
         output.innerText = `No Prolific PID found in URL.`;
       }
     </script>
+    <h2>Welcome,</h2>
+    <p id="result">result</p>
     <p>
       You are expected to have one of Meta Quest 2, Meta Quest 3, or Meta Quest
       3s. Any other types of VR headsets are not supported.
@@ -73,6 +87,11 @@
       </li>
       <li>
         Open “AndroidSensorLog” from the Mobile VR Station on your headset.
+      </li>
+      <li>
+        Before starting the assignments, please enter your email in the VR
+        application. Failure to enter a valid email address will result in
+        rejection.
       </li>
     </ol>
 
@@ -143,16 +162,31 @@
     </p>
 
     <p>
-      When you finish all the tasks, a 6-digit code is generated at the bottom
-      of the screen. Please enter this code in the corresponding section on the
-      website. Failure to enter a valid code will result in rejection.
+      When you finish all the tasks, an alphanumeric code is generated at the
+      bottom of the screen. Please enter this code below. Failure to enter a
+      valid code will result in rejection.
     </p>
     <p>
-      Before submitting the assignments, please enter your email in the VR
-      application. Failure to enter a valid email address will result in
-      rejection.
+      If you have any questions or suggestions, please contact
+      <a href="mailto:yi.qu@temple.edu">yi.qu@temple.edu</a>. Thanks.
     </p>
-    <!---
+    <input
+      type="text"
+      id="finishCode"
+      placeholder="Please enter the code shown at the bottom of your VR screen"
+    />
+
+    <p>
+      <strong
+        >Thanks for your participation. Please click the submit button
+        below.</strong
+      >
+    </p>
+    <button id="gotoButton" onClick="redirect()">Submit</button>
+  </body>
+</html>
+
+<!---
     <strong>Please enter your email address and your device type here below.</strong>
     <div>
         <p><strong>Email address:</strong></p>
@@ -164,20 +198,3 @@
         <crowd-input name="deviceType" default-value=${task.input.deviceType} placeholder="Meta Quest 2, Meta Quest 3, or Meta Quest 3s" required></crowd-input>
     </div>
     --->
-    <p>
-      <strong
-        >Thanks for your participation. Please click the submit button
-        below.</strong
-      >
-    </p>
-    <button
-      onclick="location.href='https://yourusername.github.io/yourrepo/target.html'"
-    >
-      Go to Target Page
-    </button>
-    <p>
-      If you have any questions or suggestions, please contact
-      <a href="mailto:yi.qu@temple.edu">yi.qu@temple.edu</a>. Thanks.
-    </p>
-  </body>
-</html>
