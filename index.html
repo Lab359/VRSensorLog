@@ -10,20 +10,20 @@
       const study_id = params.get("STUDY_ID");
       const session_id = params.get("SESSION_ID");
 
-      function hashString(str) {
-        let has = 5381;
-        for (let i = 0; i < str.length; i++) {
-          hash = (hash << 5) + hash + str.charCodeAt(i);
-          hash = hash & 0xffffffff;
-        }
-        return Math.abs(hash);
-      }
-
-      function generateCode(prolific_id) {
-        const hash = hashString(prolific_id);
-        const code = (hash % 900000) + 100000;
-        return code;
-      }
+      // function hashString(str) {
+      //   let has = 5381;
+      //   for (let i = 0; i < str.length; i++) {
+      //     hash = (hash << 5) + hash + str.charCodeAt(i);
+      //     hash = hash & 0xffffffff;
+      //   }
+      //   return Math.abs(hash);
+      // }
+      //
+      // function generateCode(prolific_id) {
+      //   const hash = hashString(prolific_id);
+      //   const code = (hash % 900000) + 100000;
+      //   return code;
+      // }
 
       function redirect() {
         const input = document.getElementById("finishCode").value.trim();
@@ -39,14 +39,14 @@
 
       const output = document.getElementById("result");
       if (prolific_id) {
-        const code = generateCode(prolific_id);
+        //const code = generateCode(prolific_id);
         output.innerText = `your Prolific PID = ${prolific_id}.`;
       } else {
         output.innerText = `No Prolific PID found in URL.`;
       }
     </script>
-    <h2>Welcome,</h2>
-    <p id="result">result</p>
+    <h2>Welcome Prolific Participant</h2>
+    <p id="result">Loading ...</p>
     <p>
       You are expected to have one of Meta Quest 2, Meta Quest 3, or Meta Quest
       3s. Any other types of VR headsets are not supported.
