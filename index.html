@@ -27,12 +27,16 @@
 
       function redirect() {
         const input = document.getElementById("finishCode").value.trim();
-        if (input !== "C191Z2IJ") {
+        if (input !== "C191Z2IJ" || input !== "C7RDH5T5") {
           alert("Please enter a Valid Code.");
           return;
-        } else {
+        } else if (input == "C191Z2IJ") {
           const redirectUrl =
             "https://app.prolific.com/submissions/complete?cc=C191Z2IJ";
+          window.location.href = redirectUrl;
+        } else if (input == "C7RDH5T5") {
+          const redirectUrl =
+            "https://app.prolific.com/submissions/complete?cc=C7RDH5T5";
           window.location.href = redirectUrl;
         }
       }
@@ -53,7 +57,7 @@
       Stable on the Table, Sitting Still, and Standing Still.
     </p>
     <p>
-      ** You are expected to have one of Meta Quest 3 or Meta Quest 3S. Any
+      ** You are expected to have one of Meta Quest 2 or Meta Quest 3S. Any
       other types of VR headsets are not supported.
     </p>
     <p>
