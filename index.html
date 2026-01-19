@@ -27,14 +27,14 @@
 
       function redirect() {
         const input = document.getElementById("finishCode").value.trim();
-        if (input !== "C191Z2IJ" || input !== "C7RDH5T5") {
+        if (input !== "C191Z2IJ" && input !== "C7RDH5T5") {
           alert("Please enter a Valid Code.");
           return;
-        } else if (input == "C191Z2IJ") {
+        } else if (input === "C191Z2IJ") {
           const redirectUrl =
             "https://app.prolific.com/submissions/complete?cc=C191Z2IJ";
           window.location.href = redirectUrl;
-        } else if (input == "C7RDH5T5") {
+        } else {
           const redirectUrl =
             "https://app.prolific.com/submissions/complete?cc=C7RDH5T5";
           window.location.href = redirectUrl;
